@@ -1,14 +1,15 @@
 from django.http import JsonResponse
 from rest_framework import viewsets
 from .models import Task
+from .models import Offer
 from .serializers import TaskSerializer
+from .serializers import OfferSerializer
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
     serializer_class = TaskSerializer
 
-def get_data(request):
-    data = {
-        "message": "Hello from Django!"
-    }
-    return JsonResponse(data)
+
+class OfferViewSet(viewsets.ModelViewSet):
+    queryset = Offer.objects.all().order_by('-id')
+    serializer_class = OfferSerializer

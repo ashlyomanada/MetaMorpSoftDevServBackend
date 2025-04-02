@@ -1,13 +1,13 @@
-from django.urls import path
-from . import views
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import TaskViewSet
+from .views import TaskViewSet, OfferViewSet
 
 # Create a router and register viewsets
 router = DefaultRouter()
 router.register(r'tasks', TaskViewSet, basename='task')
+router.register(r'offers', OfferViewSet, basename='offer')
+
+# Include router.urls in urlpatterns
 urlpatterns = [
-    path('', include(router.urls)),
-    path('data/', views.get_data, name='get_data'),  # Example endpoint
+    path('', include(router.urls)),  # This is necessary for DRF to work
 ]

@@ -1,11 +1,13 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import TaskViewSet, OfferViewSet
+from .views import TaskViewSet, OfferViewSet, WeDoSerializer, ChooseUsSerializer
 
 # Create a router and register viewsets
 router = DefaultRouter()
 router.register(r'tasks', TaskViewSet, basename='task')
 router.register(r'offers', OfferViewSet, basename='offer')
+router.register(r'wedos', WeDoSerializer, basename='wedo')
+router.register(r'chooseus', ChooseUsSerializer, basename='chooseus')
 
 # Include router.urls in urlpatterns
 urlpatterns = [

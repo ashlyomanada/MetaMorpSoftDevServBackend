@@ -5,6 +5,7 @@ from .models import WeDo
 from .models import ChooseUs
 from .models import CustomServices
 from .models import WeWork
+from .models import News
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -35,4 +36,9 @@ class CustomServicesSerializer(serializers.ModelSerializer):
 class WeWorkSerializer(serializers.ModelSerializer):
     class Meta:
         model = WeWork
+        fields = '__all__'
+
+class NewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = News
         fields = '__all__'

@@ -6,12 +6,14 @@ from .models import WeDo
 from .models import ChooseUs
 from .models import CustomServices
 from .models import WeWork
+from .models import News
 from .serializers import TaskSerializer
 from .serializers import OfferSerializer
 from .serializers import WeDoSerializer
 from .serializers import ChooseUsSerializer
 from .serializers import CustomServicesSerializer
 from .serializers import WeWorkSerializer
+from .serializers import NewsSerializer
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
@@ -37,3 +39,7 @@ class CustomServicesSerializer(viewsets.ModelViewSet):
 class WeWorkSerializer(viewsets.ModelViewSet):
     queryset = WeWork.objects.all().order_by('-id')
     serializer_class = WeWorkSerializer
+
+class NewsViewSet(viewsets.ModelViewSet):
+    queryset = News.objects.all() .order_by('-id')
+    serializer_class = NewsSerializer

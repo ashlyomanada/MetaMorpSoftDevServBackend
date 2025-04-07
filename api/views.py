@@ -40,6 +40,6 @@ class WeWorkSerializer(viewsets.ModelViewSet):
     queryset = WeWork.objects.all().order_by('-id')
     serializer_class = WeWorkSerializer
 
-class NewsViewSet(viewsets.ModelViewSet):
+class NewsSerializer(viewsets.ModelViewSet):
     queryset = News.objects.all() .order_by('-id')
     serializer_class = NewsSerializer

@@ -65,3 +65,27 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+class WebActivities(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/webActivities/', blank=True, null=True)  # Add image field
+
+    def __str__(self):
+        return self.title
+    
+class WhyMeta(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/whyMeta/', blank=True, null=True)  # Add image field
+
+    def __str__(self):
+        return self.title
+    
+class HowWeDo(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/whyMeta/', blank=True, null=True)  # Add image field
+
+    def __str__(self):
+        return self.title

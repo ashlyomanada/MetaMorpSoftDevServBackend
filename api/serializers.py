@@ -7,6 +7,9 @@ from .models import CustomServices
 from .models import WeWork
 from .models import TechWeUse
 from .models import News
+from .models import WebActivities
+from .models import WhyMeta
+from .models import HowWeDo
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -47,4 +50,19 @@ class TechWeUseSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
+        fields = '__all__'
+
+class WebActivitiesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WebActivities
+        fields = '__all__'
+
+class WhyMetaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WhyMeta
+        fields = '__all__'
+
+class HowWeDoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HowWeDo
         fields = '__all__'

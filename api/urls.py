@@ -34,6 +34,46 @@ from .views import WhyChooseUsViewSet
 from .views import PartnershipViewSet
 from .views import PartnershipDropDownsViewSet
 
+from .views import ClientsViewSet
+from .views import TechInsightsViewSet
+from .views import OutsourcingViewSet
+from .views import DedicatedTeamViewSet
+from .views import HrProcessViewSet
+from .views import SolutionOffshoreViewSet
+from .views import StaffAugmentationViewSet
+from .views import PlanningViewSet
+from .views import AdvantagesStaffViewSet
+from .views import DifferenceBetweenViewSet
+from .views import MisconceptionsViewSet
+from .views import AugProcessViewSet
+from .views import LookForViewSet
+from .views import AddSoftwareViewSet
+from .views import OutsourcingServViewSet
+from .views import BenefitsSoftViewSet
+from .views import PremiumSoftViewSet
+from .views import SoftwareStagesViewSet
+from .views import SoftChooseMetaViewSet
+from .views import AdvantagesSoftDevViewSet
+from .views import SoftStagesViewSet
+from .views import AskedQuestionsViewSet
+from .views import EnsureSuccessViewSet
+from .views import PremiumCompanyViewSet
+from .views import DataScienceServViewSet
+from .views import DataApproachViewSet
+from .views import OurDataApproachViewSet
+from .views import DataUseCaseViewSet
+from .views import DataPrivacyViewSet
+from .views import MachineLearningViewSet
+from .views import OurMachineServViewSet
+from .views import DeliverMachineViewSet
+from .views import HireMachineViewSet
+from .views import FrequentMachineViewSet
+from .views import AiDevServiceViewSet
+from .views import AiDomainViewSet
+from .views import OutsourceAiViewSet
+from .views import AiDevQuestionsViewSet
+from .views import ExcelAiDevViewSet
+
 # Create a router and register viewsets
 router = DefaultRouter()
 router.register(r'tasks', TaskViewSet, basename='task')
@@ -93,6 +133,46 @@ router.register(r'whyChooseUs', WhyChooseUsViewSet, basename='whyChooseUs')
 # Partnership
 router.register(r'partnership', PartnershipViewSet, basename='partnership')
 router.register(r'partnershipDropDowns', PartnershipDropDownsViewSet, basename='partnershipDropDowns')
+
+router.register(r'clients', ClientsViewSet, basename='clients')
+router.register(r'techInsights', TechInsightsViewSet, basename='techInsights')
+router.register(r'outsourcing', OutsourcingViewSet, basename='outsourcing')
+router.register(r'dedicatedTeam', DedicatedTeamViewSet, basename='dedicatedTeam')
+router.register(r'hrProcess', HrProcessViewSet, basename='hrProcess')
+router.register(r'solutionOffshore', SolutionOffshoreViewSet, basename='solutionOffshore')
+router.register(r'staffAugmentation', StaffAugmentationViewSet, basename='staffAugmentation')
+router.register(r'planning', PlanningViewSet, basename='planning')
+router.register(r'advantagesStaff', AdvantagesStaffViewSet, basename='advantagesStaff')
+router.register(r'differenceBetween', DifferenceBetweenViewSet, basename='differenceBetween')
+router.register(r'misconceptions', MisconceptionsViewSet, basename='misconceptions')
+router.register(r'augProcess', AugProcessViewSet, basename='augProcess')
+router.register(r'lookFor', LookForViewSet, basename='lookFor')
+router.register(r'addSoftware', AddSoftwareViewSet, basename='addSoftware')
+router.register(r'outsourcingServ', OutsourcingServViewSet, basename='outsourcingServ')
+router.register(r'benefitsSoft', BenefitsSoftViewSet, basename='benefitsSoft')
+router.register(r'premiumSoft', PremiumSoftViewSet, basename='premiumSoft')
+router.register(r'softwareStages', SoftwareStagesViewSet, basename='softwareStages')
+router.register(r'softChooseMeta', SoftChooseMetaViewSet, basename='softChooseMeta')
+router.register(r'advantagesSoftDev', AdvantagesSoftDevViewSet, basename='advantagesSoftDev')
+router.register(r'softStages', SoftStagesViewSet, basename='softStages')
+router.register(r'askedQuestions', AskedQuestionsViewSet, basename='askedQuestions')
+router.register(r'ensureSuccess', EnsureSuccessViewSet, basename='ensureSuccess')
+router.register(r'premiumCompany', PremiumCompanyViewSet, basename='premiumCompany')
+router.register(r'dataScienceServ', DataScienceServViewSet, basename='dataScienceServ')
+router.register(r'dataApproach', DataApproachViewSet, basename='dataApproach')
+router.register(r'ourDataApproach', OurDataApproachViewSet, basename='ourDataApproach')
+router.register(r'dataUseCase', DataUseCaseViewSet, basename='dataUseCase')
+router.register(r'dataPrivacy', DataPrivacyViewSet, basename='dataPrivacy')
+router.register(r'machineLearning', MachineLearningViewSet, basename='machineLearning')
+router.register(r'ourMachineServ', OurMachineServViewSet, basename='ourMachineServ')
+router.register(r'deliverMachine', DeliverMachineViewSet, basename='deliverMachine')
+router.register(r'hireMachine', HireMachineViewSet, basename='hireMachine')
+router.register(r'frequentMachine', FrequentMachineViewSet, basename='frequentMachine')
+router.register(r'aiDevService', AiDevServiceViewSet, basename='aiDevService')
+router.register(r'aiDomain', AiDomainViewSet, basename='aiDomain')
+router.register(r'outsourceAi', OutsourceAiViewSet, basename='outsourceAi')
+router.register(r'aiDevQuestions', AiDevQuestionsViewSet, basename='aiDevQuestions')
+router.register(r'excelAiDev', ExcelAiDevViewSet, basename='excelAiDev')
 
 
 # Include router.urls in urlpatterns

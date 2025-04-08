@@ -10,6 +10,7 @@ from .models import News
 from .models import WebActivities
 from .models import WhyMeta
 from .models import HowWeDo
+from .models import CaseStudies
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -65,4 +66,9 @@ class WhyMetaSerializer(serializers.ModelSerializer):
 class HowWeDoSerializer(serializers.ModelSerializer):
     class Meta:
         model = HowWeDo
+        fields = '__all__'
+        
+class CaseStudiesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CaseStudies
         fields = '__all__'

@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import TaskViewSet, OfferViewSet, WeDoSerializer, ChooseUsSerializer , CustomServicesSerializer, WeWorkSerializer, TechWeUseSerializer, NewsSerializer, WebActivitiesSerializer, WhyMetaSerializer, HowWeDoSerializer
+from .views import TaskViewSet, OfferViewSet, WeDoSerializer, ChooseUsSerializer , CustomServicesSerializer, WeWorkSerializer, TechWeUseSerializer, NewsSerializer, CaseStudiesViewSet,  WebActivitiesSerializer, WhyMetaSerializer, HowWeDoSerializer
+
 
 # Create a router and register viewsets
 router = DefaultRouter()
@@ -15,7 +16,7 @@ router.register(r'news', NewsSerializer, basename='news')
 router.register(r'webactivities', WebActivitiesSerializer, basename='webactivities')
 router.register(r'whymeta', WhyMetaSerializer, basename='whymeta')
 router.register(r'howwedo', HowWeDoSerializer, basename='howwedo')
-
+router.register(r'casestudies', CaseStudiesViewSet, basename='casestudies') 
 
 # Include router.urls in urlpatterns
 urlpatterns = [

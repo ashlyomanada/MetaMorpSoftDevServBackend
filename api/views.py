@@ -11,6 +11,7 @@ from .models import News
 from .models import WebActivities
 from .models import WhyMeta
 from .models import HowWeDo
+from .models import CaseStudies
 from .serializers import TaskSerializer
 from .serializers import OfferSerializer
 from .serializers import WeDoSerializer
@@ -22,6 +23,8 @@ from .serializers import NewsSerializer
 from .serializers import WebActivitiesSerializer
 from .serializers import WhyMetaSerializer
 from .serializers import HowWeDoSerializer
+from .serializers import CaseStudiesSerializer
+
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
@@ -67,3 +70,8 @@ class WhyMetaSerializer(viewsets.ModelViewSet):
 class HowWeDoSerializer(viewsets.ModelViewSet):
     queryset = HowWeDo.objects.all() .order_by('-id')
     serializer_class = HowWeDoSerializer
+
+class CaseStudiesViewSet(viewsets.ModelViewSet):
+    queryset = CaseStudies.objects.all().order_by('-id')
+    serializer_class = CaseStudiesSerializer
+

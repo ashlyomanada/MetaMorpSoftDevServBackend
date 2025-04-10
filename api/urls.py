@@ -12,7 +12,7 @@ from .views import CaseStudiesViewSet
 from .views import WebActivitiesViewSet
 from .views import WhyMetaViewSet
 from .views import HowWeDoViewSet
-from .views import AboutUxUiViewSet
+from .views import OurServicesViewSet
 from .views import OurUxUiViewSet
 from .views import UxServicesViewSet
 from .views import UiServicesViewSet
@@ -73,13 +73,14 @@ from .views import AiDomainViewSet
 from .views import OutsourceAiViewSet
 from .views import AiDevQuestionsViewSet
 from .views import ExcelAiDevViewSet
+from .views import LocationViewSet
 
-# Create a router and register viewsets
 router = DefaultRouter()
 router.register(r'tasks', TaskViewSet, basename='task')
 router.register(r'offers', OfferViewSet, basename='offer')
 router.register(r'wedos', WeDoViewSet, basename='wedo')
 router.register(r'chooseus', ChooseUsViewSet, basename='chooseus')
+router.register(r'ourServices', OurServicesViewSet, basename='ourServices')
 router.register(r'customservices', CustomServicesViewSet, basename='customservices')
 router.register(r'wework', WeWorkViewSet, basename='wework')
 router.register(r'techweuse', TechWeUseViewSet, basename='techweuse')
@@ -88,28 +89,14 @@ router.register(r'webactivities', WebActivitiesViewSet, basename='webactivities'
 router.register(r'whymeta', WhyMetaViewSet, basename='whymeta')
 router.register(r'howwedo', HowWeDoViewSet, basename='howwedo')
 router.register(r'casestudies', CaseStudiesViewSet, basename='casestudies') 
-
-# ux-ui-design
-router.register(r'aboutuxui', AboutUxUiViewSet, basename='aboutuxui') 
-# 2 and 4 page section
 router.register(r'ouruxui', OurUxUiViewSet, basename='ouruxui')
-# Our UX Services
 router.register(r'uxservice', UxServicesViewSet, basename='uxservice') 
-# Our UI Design Services
 router.register(r'uiservice', UiServicesViewSet, basename='uiservice')
-
-# Independent dedicated QA & testing teams
 router.register(r'qaAbout', QaAboutViewSet, basename='qaAbout') 
-# Why Metamorphosis
 router.register(r'qaWhyMeta', QaWhyMetaViewSet, basename='qaWhyMeta') 
-# How We Do It
 router.register(r'qaHowWeDo', QaHowWeDoViewSet, basename='qaHowWeDo') 
-# Testing Expertise
 router.register(r'qaTesting', QaTestingViewSet, basename='qaTesting')
-
-# cloud-computing 2nd page section
 router.register(r'cloudOffer', CloudOfferViewSet, basename='cloudOffer') 
-# cloud-benefits
 router.register(r'cloudBenefits', CloudBenefitsViewSet, basename='cloudBenefits')
 
 # Who We Are
@@ -173,6 +160,7 @@ router.register(r'aiDomain', AiDomainViewSet, basename='aiDomain')
 router.register(r'outsourceAi', OutsourceAiViewSet, basename='outsourceAi')
 router.register(r'aiDevQuestions', AiDevQuestionsViewSet, basename='aiDevQuestions')
 router.register(r'excelAiDev', ExcelAiDevViewSet, basename='excelAiDev')
+router.register(r'ourLocation', LocationViewSet, basename='ourLocation')
 
 
 # Include router.urls in urlpatterns

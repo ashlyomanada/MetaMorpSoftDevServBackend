@@ -86,10 +86,10 @@ class HowWeDo(models.Model):
         return self.title
     
 # ux-ui-design
-class AboutUxUi(models.Model):
+class OurServices(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='images/uxUi/', blank=True, null=True)  # Add image field
+    image = models.ImageField(upload_to='images/ourServices/', blank=True, null=True)  # Add image field
     def __str__(self):
         return self.title
 
@@ -552,3 +552,13 @@ class ExcelAiDev(models.Model):
     description = models.TextField()
     def __str__(self):
         return self.title
+
+class Location(models.Model):
+    address = models.CharField(max_length=255)
+    office = models.CharField(max_length=100)
+    contact = models.CharField(max_length=100)
+    number = models.CharField(max_length=20)
+    postal_code = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f"{self.office} - {self.address}"

@@ -12,7 +12,7 @@ from .models import WebActivities
 from .models import WhyMeta
 from .models import HowWeDo
 from .models import CaseStudies
-from .models import AboutUxUi
+from .models import OurServices
 from .models import OurUxUi
 from .models import UxServices
 from .models import UiServices
@@ -33,7 +33,6 @@ from .models import AchieveSuccess
 from .models import WhyChooseUs
 from .models import Partnership
 from .models import PartnershipDropDowns
-
 from .models import Clients
 from .models import TechInsights
 from .models import Outsourcing
@@ -73,6 +72,7 @@ from .models import AiDomain
 from .models import OutsourceAi
 from .models import AiDevQuestions
 from .models import ExcelAiDev
+from .models import Location
 
 from .serializers import TaskSerializer
 from .serializers import OfferSerializer
@@ -86,7 +86,7 @@ from .serializers import WebActivitiesSerializer
 from .serializers import WhyMetaSerializer
 from .serializers import HowWeDoSerializer
 from .serializers import CaseStudiesSerializer
-from .serializers import AboutUxUiSerializer
+from .serializers import OurServicesSerializer
 from .serializers import OurUxUiSerializer
 from .serializers import UxServicesSerializer
 from .serializers import UiServicesSerializer
@@ -107,7 +107,6 @@ from .serializers import AchieveSuccessSerializer
 from .serializers import WhyChooseUsSerializer
 from .serializers import PartnershipSerializer
 from .serializers import PartnershipDropDownsSerializer
-
 from .serializers import ClientsSerializer
 from .serializers import TechInsightsSerializer
 from .serializers import OutsourcingSerializer
@@ -147,6 +146,7 @@ from .serializers import AiDomainSerializer
 from .serializers import OutsourceAiSerializer
 from .serializers import AiDevQuestionsSerializer
 from .serializers import ExcelAiDevSerializer
+from .serializers import LocationSerializer
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
@@ -196,9 +196,9 @@ class CaseStudiesViewSet(viewsets.ModelViewSet):
     queryset = CaseStudies.objects.all().order_by('-id')
     serializer_class = CaseStudiesSerializer
 
-class AboutUxUiViewSet(viewsets.ModelViewSet):
-    queryset = AboutUxUi.objects.all().order_by('-id')
-    serializer_class = AboutUxUiSerializer
+class OurServicesViewSet(viewsets.ModelViewSet):
+    queryset = OurServices.objects.all().order_by('-id')
+    serializer_class = OurServicesSerializer
 
 class OurUxUiViewSet(viewsets.ModelViewSet):
     queryset = OurUxUi.objects.all().order_by('-id')
@@ -398,3 +398,7 @@ class AiDevQuestionsViewSet(viewsets.ModelViewSet):
 class ExcelAiDevViewSet(viewsets.ModelViewSet):
     queryset = ExcelAiDev.objects.all().order_by('-id')
     serializer_class = ExcelAiDevSerializer
+
+class LocationViewSet(viewsets.ModelViewSet):
+    queryset = Location.objects.all().order_by('-id')
+    serializer_class = LocationSerializer

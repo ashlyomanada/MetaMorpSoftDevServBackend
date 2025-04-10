@@ -11,7 +11,7 @@ from .models import WebActivities
 from .models import WhyMeta
 from .models import HowWeDo
 from .models import CaseStudies
-from .models import AboutUxUi
+from .models import OurServices
 from .models import OurUxUi
 from .models import UxServices
 from .models import UiServices
@@ -32,7 +32,6 @@ from .models import AchieveSuccess
 from .models import WhyChooseUs
 from .models import Partnership
 from .models import PartnershipDropDowns
-
 from .models import Clients
 from .models import TechInsights
 from .models import Outsourcing
@@ -72,6 +71,7 @@ from .models import AiDomain
 from .models import OutsourceAi
 from .models import AiDevQuestions
 from .models import ExcelAiDev
+from .models import Location
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -134,9 +134,9 @@ class CaseStudiesSerializer(serializers.ModelSerializer):
         model = CaseStudies
         fields = '__all__'
 
-class AboutUxUiSerializer(serializers.ModelSerializer):
+class OurServicesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = AboutUxUi
+        model = OurServices
         fields = '__all__'
 
 class OurUxUiSerializer(serializers.ModelSerializer):
@@ -395,6 +395,11 @@ class AiDevQuestionsSerializer(serializers.ModelSerializer):
 class ExcelAiDevSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExcelAiDev
+        fields = '__all__'
+    
+class LocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Location
         fields = '__all__'
         
 

@@ -308,7 +308,7 @@ class PremiumSoftSerializer(serializers.ModelSerializer):
     class Meta:
         model = PremiumSoft
         fields = '__all__'
-class SoftStagesSerializer(serializers.ModelSerializer):
+class SoftwareStagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = SoftwareStages
         fields = '__all__'

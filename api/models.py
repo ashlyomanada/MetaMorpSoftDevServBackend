@@ -191,6 +191,7 @@ class CompanyCulture(models.Model):
 # Management Team
 class ManageTeam(models.Model):
     title = models.CharField(max_length=100)
+    position = models.CharField(max_length=100, default='Member')  # or any default
     description = models.TextField()
     image = models.ImageField(upload_to='images/whoWeAre/', blank=True, null=True)  # Add image field
     def __str__(self):
@@ -460,6 +461,7 @@ class DataApproach(models.Model):
 class OurDataApproach(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
+    image = models.ImageField(upload_to='images/dataScienceServ/', blank=True, null=True)  # Add image field
     def __str__(self):
         return self.title
     
@@ -556,9 +558,9 @@ class ExcelAiDev(models.Model):
 class Location(models.Model):
     address = models.CharField(max_length=255)
     office = models.CharField(max_length=100)
-    contact = models.CharField(max_length=100)
-    number = models.CharField(max_length=20)
+    contact = models.CharField(max_length=20)
     postal_code = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='images/machineLearning/', blank=True, null=True)  # Add image field
 
     def __str__(self):
         return f"{self.office} - {self.address}"

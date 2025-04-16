@@ -98,25 +98,20 @@ router.register(r'qaHowWeDo', QaHowWeDoViewSet, basename='qaHowWeDo')
 router.register(r'qaTesting', QaTestingViewSet, basename='qaTesting')
 router.register(r'cloudOffer', CloudOfferViewSet, basename='cloudOffer') 
 router.register(r'cloudBenefits', CloudBenefitsViewSet, basename='cloudBenefits')
-
-# Who We Are
 router.register(r'whoWeAre', WhoWeAreViewSet, basename='whoWeAre')
-# MISSION AND VISION
-router.register(r'missionVission', MissionVissionViewSet, basename='missionVission')
-# Company Culture and Values
-router.register(r'companyCulture', CompanyCultureViewSet, basename='companyCulture')
-# Management Team
-router.register(r'manageTeam', ManageTeamViewSet, basename='manageTeam')
-# Business Philosophy
 router.register(r'busPhilosophy', BusPhilosophyViewSet, basename='busPhilosophy')
-# How We Work
+router.register(r'manageTeam', ManageTeamViewSet, basename='manageTeam')
+router.register(r'missionVission', MissionVissionViewSet, basename='missionVission')
+router.register(r'companyCulture', CompanyCultureViewSet, basename='companyCulture')
 router.register(r'howWeWork', HowWeWorkViewSet, basename='howWeWork')
-# DEVELOPMENT STAGES
 router.register(r'developmentStage', DevelopmentStageViewSet, basename='developmentStage')
+
 # How We Achieve Success
 router.register(r'achieveSuccess', AchieveSuccessViewSet, basename='achieveSuccess')
+
 # Why Choose Us
 router.register(r'whyChooseUs', WhyChooseUsViewSet, basename='whyChooseUs')
+
 # Partnership
 router.register(r'partnership', PartnershipViewSet, basename='partnership')
 router.register(r'partnershipDropDowns', PartnershipDropDownsViewSet, basename='partnershipDropDowns')
@@ -124,9 +119,13 @@ router.register(r'partnershipDropDowns', PartnershipDropDownsViewSet, basename='
 router.register(r'clients', ClientsViewSet, basename='clients')
 router.register(r'techInsights', TechInsightsViewSet, basename='techInsights')
 router.register(r'outsourcing', OutsourcingViewSet, basename='outsourcing')
+
+# Dedicated Software Teams
 router.register(r'dedicatedTeam', DedicatedTeamViewSet, basename='dedicatedTeam')
 router.register(r'hrProcess', HrProcessViewSet, basename='hrProcess')
 router.register(r'solutionOffshore', SolutionOffshoreViewSet, basename='solutionOffshore')
+
+# Staff Augmentation
 router.register(r'staffAugmentation', StaffAugmentationViewSet, basename='staffAugmentation')
 router.register(r'planning', PlanningViewSet, basename='planning')
 router.register(r'advantagesStaff', AdvantagesStaffViewSet, basename='advantagesStaff')
@@ -135,6 +134,8 @@ router.register(r'misconceptions', MisconceptionsViewSet, basename='misconceptio
 router.register(r'augProcess', AugProcessViewSet, basename='augProcess')
 router.register(r'lookFor', LookForViewSet, basename='lookFor')
 router.register(r'addSoftware', AddSoftwareViewSet, basename='addSoftware')
+
+# Software Outsourcing
 router.register(r'outsourcingServ', OutsourcingServViewSet, basename='outsourcingServ')
 router.register(r'benefitsSoft', BenefitsSoftViewSet, basename='benefitsSoft')
 router.register(r'premiumSoft', PremiumSoftViewSet, basename='premiumSoft')
@@ -145,22 +146,29 @@ router.register(r'softStages', SoftStagesViewSet, basename='softStages')
 router.register(r'askedQuestions', AskedQuestionsViewSet, basename='askedQuestions')
 router.register(r'ensureSuccess', EnsureSuccessViewSet, basename='ensureSuccess')
 router.register(r'premiumCompany', PremiumCompanyViewSet, basename='premiumCompany')
+
+# Data Science
 router.register(r'dataScienceServ', DataScienceServViewSet, basename='dataScienceServ')
 router.register(r'dataApproach', DataApproachViewSet, basename='dataApproach')
 router.register(r'ourDataApproach', OurDataApproachViewSet, basename='ourDataApproach')
 router.register(r'dataUseCase', DataUseCaseViewSet, basename='dataUseCase')
 router.register(r'dataPrivacy', DataPrivacyViewSet, basename='dataPrivacy')
+
+# Machine Learning
 router.register(r'machineLearning', MachineLearningViewSet, basename='machineLearning')
 router.register(r'ourMachineServ', OurMachineServViewSet, basename='ourMachineServ')
 router.register(r'deliverMachine', DeliverMachineViewSet, basename='deliverMachine')
 router.register(r'hireMachine', HireMachineViewSet, basename='hireMachine')
 router.register(r'frequentMachine', FrequentMachineViewSet, basename='frequentMachine')
+
+# AI Development
 router.register(r'aiDevService', AiDevServiceViewSet, basename='aiDevService')
 router.register(r'aiDomain', AiDomainViewSet, basename='aiDomain')
 router.register(r'outsourceAi', OutsourceAiViewSet, basename='outsourceAi')
 router.register(r'aiDevQuestions', AiDevQuestionsViewSet, basename='aiDevQuestions')
 router.register(r'excelAiDev', ExcelAiDevViewSet, basename='excelAiDev')
-router.register(r'ourLocation', LocationViewSet, basename='ourLocation')
+
+router.register(r'location', LocationViewSet, basename='location')
 
 
 # Include router.urls in urlpatterns

@@ -124,7 +124,7 @@ from .serializers import AddSoftwareSerializer
 from .serializers import OutsourcingServSerializer
 from .serializers import BenefitsSoftSerializer
 from .serializers import PremiumSoftSerializer
-from .serializers import SoftStagesSerializer
+from .serializers import SoftwareStagesSerializer
 from .serializers import SoftChooseMetaSerializer
 from .serializers import AdvantagesSoftDevSerializer
 from .serializers import SoftStagesSerializer
@@ -334,7 +334,7 @@ class PremiumSoftViewSet(viewsets.ModelViewSet):
     serializer_class = PremiumSoftSerializer
 class SoftwareStagesViewSet(viewsets.ModelViewSet):
     queryset = SoftwareStages.objects.all().order_by('-id')
-    serializer_class = SoftStagesSerializer
+    serializer_class = SoftwareStagesSerializer
 class SoftChooseMetaViewSet(viewsets.ModelViewSet):
     queryset = SoftChooseMeta.objects.all().order_by('-id')
     serializer_class = SoftChooseMetaSerializer

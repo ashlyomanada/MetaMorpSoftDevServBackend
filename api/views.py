@@ -73,6 +73,8 @@ from .models import OutsourceAi
 from .models import AiDevQuestions
 from .models import ExcelAiDev
 from .models import Location
+from .models import Jobs
+from .models import CareerBenefits
 
 from .serializers import TaskSerializer
 from .serializers import OfferSerializer
@@ -147,6 +149,8 @@ from .serializers import OutsourceAiSerializer
 from .serializers import AiDevQuestionsSerializer
 from .serializers import ExcelAiDevSerializer
 from .serializers import LocationSerializer
+from .serializers import JobsSerializer
+from .serializers import CareerBenefitsSerializer
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
@@ -402,3 +406,11 @@ class ExcelAiDevViewSet(viewsets.ModelViewSet):
 class LocationViewSet(viewsets.ModelViewSet):
     queryset = Location.objects.all().order_by('-id')
     serializer_class = LocationSerializer
+
+class JobsViewSet(viewsets.ModelViewSet):
+    queryset = Jobs.objects.all().order_by('-id')
+    serializer_class = JobsSerializer
+
+class CareerBenefitsViewSet(viewsets.ModelViewSet):
+    queryset = CareerBenefits.objects.all().order_by('-id')
+    serializer_class = CareerBenefitsSerializer

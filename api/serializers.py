@@ -72,6 +72,8 @@ from .models import OutsourceAi
 from .models import AiDevQuestions
 from .models import ExcelAiDev
 from .models import Location
+from .models import Jobs
+from .models import CareerBenefits
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -400,6 +402,16 @@ class ExcelAiDevSerializer(serializers.ModelSerializer):
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
+        fields = '__all__'
+
+class JobsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Jobs
+        fields = '__all__'
+
+class CareerBenefitsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CareerBenefits
         fields = '__all__'
         
 

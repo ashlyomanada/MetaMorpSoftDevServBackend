@@ -564,3 +564,20 @@ class Location(models.Model):
 
     def __str__(self):
         return f"{self.office} - {self.address}"
+
+class Jobs(models.Model):
+    position = models.CharField(max_length=255)
+    headCount = models.PositiveIntegerField()
+    office = models.CharField(max_length=100)
+    date = models.DateField()
+
+    def __str__(self):
+        return self.position
+    
+# Attractive benefits
+class CareerBenefits(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/machineLearning/', blank=True, null=True)  # Add image field
+    def __str__(self):
+        return self.title

@@ -74,6 +74,8 @@ from .views import OutsourceAiViewSet
 from .views import AiDevQuestionsViewSet
 from .views import ExcelAiDevViewSet
 from .views import LocationViewSet
+from .views import JobsViewSet
+from .views import CareerBenefitsViewSet
 
 router = DefaultRouter()
 router.register(r'tasks', TaskViewSet, basename='task')
@@ -169,6 +171,8 @@ router.register(r'aiDevQuestions', AiDevQuestionsViewSet, basename='aiDevQuestio
 router.register(r'excelAiDev', ExcelAiDevViewSet, basename='excelAiDev')
 
 router.register(r'location', LocationViewSet, basename='location')
+router.register(r'jobs', JobsViewSet, basename='jobs')
+router.register(r'careerBenefits', CareerBenefitsViewSet, basename='careerBenefits')
 
 
 # Include router.urls in urlpatterns

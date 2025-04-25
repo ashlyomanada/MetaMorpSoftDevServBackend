@@ -560,10 +560,13 @@ class Location(models.Model):
     office = models.CharField(max_length=100)
     contact = models.CharField(max_length=20)
     postal_code = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='images/machineLearning/', blank=True, null=True)  # Add image field
+    image = models.ImageField(upload_to='images/machineLearning/', blank=True, null=True) 
+    city = models.CharField(max_length=100, blank=True, null=True)  
+    mapsUrl = models.URLField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return f"{self.office} - {self.address}"
+
 
 class Jobs(models.Model):
     position = models.CharField(max_length=255)
@@ -581,3 +584,14 @@ class CareerBenefits(models.Model):
     image = models.ImageField(upload_to='images/machineLearning/', blank=True, null=True)  # Add image field
     def __str__(self):
         return self.title
+
+class ApplicantsPositionDetails(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=20)
+    resume = models.FileField(upload_to='resumes/')
+    position = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"

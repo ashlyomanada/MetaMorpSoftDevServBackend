@@ -74,6 +74,7 @@ from .models import ExcelAiDev
 from .models import Location
 from .models import Jobs
 from .models import CareerBenefits
+from .models import ApplicantsPositionDetails
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -412,6 +413,11 @@ class JobsSerializer(serializers.ModelSerializer):
 class CareerBenefitsSerializer(serializers.ModelSerializer):
     class Meta:
         model = CareerBenefits
+        fields = '__all__'
+
+class ApplicantsPositionDetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ApplicantsPositionDetails
         fields = '__all__'
         
 

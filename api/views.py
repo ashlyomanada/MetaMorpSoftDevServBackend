@@ -75,6 +75,7 @@ from .models import ExcelAiDev
 from .models import Location
 from .models import Jobs
 from .models import CareerBenefits
+from .models import ApplicantsPositionDetails
 
 from .serializers import TaskSerializer
 from .serializers import OfferSerializer
@@ -151,10 +152,16 @@ from .serializers import ExcelAiDevSerializer
 from .serializers import LocationSerializer
 from .serializers import JobsSerializer
 from .serializers import CareerBenefitsSerializer
+from .serializers import ApplicantsPositionDetailsSerializer
+
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
     serializer_class = TaskSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
 class OfferViewSet(viewsets.ModelViewSet):
     queryset = Offer.objects.all().order_by('-id')
@@ -414,3 +421,7 @@ class JobsViewSet(viewsets.ModelViewSet):
 class CareerBenefitsViewSet(viewsets.ModelViewSet):
     queryset = CareerBenefits.objects.all().order_by('-id')
     serializer_class = CareerBenefitsSerializer
+
+class ApplicantsPositionDetailsViewSet(viewsets.ModelViewSet):
+    queryset = ApplicantsPositionDetails.objects.all().order_by('-id')
+    serializer_class = ApplicantsPositionDetailsSerializer

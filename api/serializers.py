@@ -75,6 +75,7 @@ from .models import Location
 from .models import Jobs
 from .models import CareerBenefits
 from .models import ApplicantsPositionDetails
+from .models import GetInTouch
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -419,6 +420,10 @@ class ApplicantsPositionDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ApplicantsPositionDetails
         fields = '__all__'
-        
 
-        
+
+class GetInTouchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GetInTouch
+        fields = '__all__'
+

@@ -76,6 +76,7 @@ from .models import Location
 from .models import Jobs
 from .models import CareerBenefits
 from .models import ApplicantsPositionDetails
+from .models import GetInTouch
 
 from .serializers import TaskSerializer
 from .serializers import OfferSerializer
@@ -153,7 +154,7 @@ from .serializers import LocationSerializer
 from .serializers import JobsSerializer
 from .serializers import CareerBenefitsSerializer
 from .serializers import ApplicantsPositionDetailsSerializer
-
+from .serializers import GetInTouchSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 
@@ -425,3 +426,6 @@ class CareerBenefitsViewSet(viewsets.ModelViewSet):
 class ApplicantsPositionDetailsViewSet(viewsets.ModelViewSet):
     queryset = ApplicantsPositionDetails.objects.all().order_by('-id')
     serializer_class = ApplicantsPositionDetailsSerializer
+class GetInTouchViewSet(viewsets.ModelViewSet):
+    queryset = GetInTouch.objects.all().order_by('-id')
+    serializer_class = GetInTouchSerializer

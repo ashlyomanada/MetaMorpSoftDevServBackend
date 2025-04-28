@@ -107,6 +107,8 @@ router.register(r'location', views.LocationViewSet, basename='location')
 router.register(r'jobs', views.JobsViewSet, basename='jobs')
 router.register(r'careerBenefits', views.CareerBenefitsViewSet, basename='careerBenefits')
 router.register(r'applicants', views.ApplicantsPositionDetailsViewSet, basename='applicants')
+router.register(r'getintouch', views.GetInTouchViewSet, basename='getintouch')
+
 
 # Final URLs list
 urlpatterns = [

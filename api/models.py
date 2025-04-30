@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-# Create your models here.
+
 class Task(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -609,5 +609,4 @@ class GetInTouch(models.Model):
         return self.full_name
     
     def get_current_time(self):
-        # Return the current date and time
         return datetime.now()

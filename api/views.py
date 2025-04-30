@@ -161,8 +161,8 @@ from rest_framework.authentication import TokenAuthentication
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
     serializer_class = TaskSerializer
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
 class OfferViewSet(viewsets.ModelViewSet):
     queryset = Offer.objects.all().order_by('-id')

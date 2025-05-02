@@ -157,7 +157,29 @@ from .serializers import ApplicantsPositionDetailsSerializer
 from .serializers import GetInTouchSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
+from .serializers import LoginSerializer
+from rest_framework.views import APIView
+from django.contrib.auth import authenticate
+from rest_framework_simplejwt.tokens import RefreshToken
 
+class LoginView(APIView):
+    def post(self, request):
+        serializer = LoginSerializer(data=request.data)
+        if serializer.is_valid():
+            username = serializer.validated_data['username']
+            password = serializer.validated_data['password']
+            user = authenticate(username=username, password=password)
+
+            if user is not None and user.is_staff:  # Ensuring only admin can login
+                refresh = RefreshToken.for_user(user)
+                return Response({
+                    'access_token': str(refresh.access_token),
+                    'refresh_token': str(refresh),
+                    'username': user.username,
+                })
+            return Response({"detail": "Invalid credentials or not an admin."}, status=status.HTTP_401_UNAUTHORIZED)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
     serializer_class = TaskSerializer

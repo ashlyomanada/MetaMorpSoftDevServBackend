@@ -611,3 +611,10 @@ class GetInTouch(models.Model):
     def get_current_time(self):
         # Return the current date and time
         return datetime.now()
+
+class Banners(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/banners/', blank=True, null=True)  # Add image field
+    def __str__(self):
+        return self.title

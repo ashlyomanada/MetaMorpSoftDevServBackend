@@ -76,6 +76,7 @@ from .models import Jobs
 from .models import CareerBenefits
 from .models import ApplicantsPositionDetails
 from .models import GetInTouch
+from .models import Banners
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -425,5 +426,10 @@ class ApplicantsPositionDetailsSerializer(serializers.ModelSerializer):
 class GetInTouchSerializer(serializers.ModelSerializer):
     class Meta:
         model = GetInTouch
+        fields = '__all__'
+
+class BannersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Banners
         fields = '__all__'
 

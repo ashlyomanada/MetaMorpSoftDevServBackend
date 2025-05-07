@@ -77,6 +77,7 @@ from .models import CareerBenefits
 from .models import ApplicantsPositionDetails
 from .models import GetInTouch
 from .models import Banners
+from .models import Administrator
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
@@ -431,5 +432,10 @@ class GetInTouchSerializer(serializers.ModelSerializer):
 class BannersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Banners
+        fields = '__all__'
+
+class AdministratorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Administrator
         fields = '__all__'
 

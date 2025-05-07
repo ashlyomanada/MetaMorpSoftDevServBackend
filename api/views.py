@@ -1,4 +1,8 @@
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.hashers import check_password
+import json
+
 from rest_framework import viewsets
 from .models import Task
 from .models import Offer
@@ -78,6 +82,7 @@ from .models import CareerBenefits
 from .models import ApplicantsPositionDetails
 from .models import GetInTouch
 from .models import Banners
+from .models import Administrator
 
 from .serializers import TaskSerializer
 from .serializers import OfferSerializer
@@ -159,29 +164,11 @@ from .serializers import GetInTouchSerializer
 from .serializers import BannersSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
+from .serializers import AdministratorSerializer
 # from .serializers import LoginSerializer
 from rest_framework.views import APIView
 from django.contrib.auth import authenticate
 # from rest_framework_simplejwt.tokens import RefreshToken
-
-class LoginView(APIView):
-    def post(self, request):
-        serializer = LoginSerializer(data=request.data)
-        if serializer.is_valid():
-            username = serializer.validated_data['username']
-            password = serializer.validated_data['password']
-            user = authenticate(username=username, password=password)
-
-            if user is not None and user.is_staff:  # Ensuring only admin can login
-                refresh = RefreshToken.for_user(user)
-                return Response({
-                    'access_token': str(refresh.access_token),
-                    'refresh_token': str(refresh),
-                    'username': user.username,
-                })
-            return Response({"detail": "Invalid credentials or not an admin."}, status=status.HTTP_401_UNAUTHORIZED)
-        
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all().order_by('-id')
@@ -459,3 +446,25 @@ class GetInTouchViewSet(viewsets.ModelViewSet):
 class BannersViewSet(viewsets.ModelViewSet):
     queryset = Banners.objects.all().order_by('-id')
     serializer_class = BannersSerializer
+
+class AdministratorViewSet(viewsets.ModelViewSet):
+    queryset = Administrator.objects.all().order_by('-id')
+    serializer_class = AdministratorSerializer
+
+@csrf_exempt
+def admin_login(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        user_name = data.get('user_name')
+        password = data.get('password')
+
+        try:
+            user = Administrator.objects.get(user_name=user_name)
+            if check_password(password, user.password):
+                return JsonResponse({"message": "Login successful", "status": "success"}, status=200)
+            else:
+                return JsonResponse({"message": "Invalid username or password", "status": "error"}, status=401)
+        except Administrator.DoesNotExist:
+            return JsonResponse({"message": "Invalid username or password", "status": "error"}, status=401)
+
+    return JsonResponse({"message": "Only POST method is allowed"}, status=405)

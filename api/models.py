@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.hashers import make_password, check_password
 # Create your models here.
 class Task(models.Model):
     title = models.CharField(max_length=100)
@@ -618,3 +619,19 @@ class Banners(models.Model):
     image = models.ImageField(upload_to='images/banners/', blank=True, null=True)  # Add image field
     def __str__(self):
         return self.title
+
+
+class Administrator(models.Model):
+    user_name = models.CharField(max_length=100, unique=True)
+    password = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+
+    def save(self, *args, **kwargs):
+        # Hash the password before saving
+        if not self.pk or not check_password(self.password, self.password):
+            self.password = make_password(self.password)
+        super(Administrator, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.user_name
